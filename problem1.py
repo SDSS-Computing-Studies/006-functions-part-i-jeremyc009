@@ -7,9 +7,9 @@ If the boolean is False, then the larger number is the hypotenuse
 Return the missing side
 (2 points)
 """
-import math
 def hypotenuse(a,b,c):
-    if c==False:
+    import math
+    if c==True:
         mSide=0
         lSide=0
         sSide=0
@@ -21,7 +21,7 @@ def hypotenuse(a,b,c):
             a=sSide
         mSide=math.sqrt(lSide**2 - sSide**2)
         return mSide
-    elif c==True:
-        hyp=0
-        hyp=math.sqrt(a**2 + b**2)
-        return hyp
+    elif c==False:
+        mSide=0
+        mSide=math.sqrt(a**2 + b**2)
+        return mSide
