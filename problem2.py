@@ -8,4 +8,9 @@ Note that the coordinates should be signed (positive or negative) floats
 (2 points)
 """
 import math
+def distance(a,b,c,d):
+    x=a-c
+    y=b-d
+    dist=(x**2 + y**2)**(1/2)
+    return dist
 
