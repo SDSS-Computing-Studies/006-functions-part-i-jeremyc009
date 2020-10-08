@@ -9,19 +9,15 @@ Return the missing side
 """
 def hypotenuse(a,b,c):
     import math
-    if c==True:
-        mSide=0
-        lSide=0
-        sSide=0
-        if a>b:
-            a=lSide
-            b=sSide
-        elif b>a:
-            b=lSide
-            a=sSide
-        mSide=math.sqrt(lSide**2 - sSide**2)
+    mSide=0
+    if c==True and a>b:
+        mSide=math.sqrt(a**2 - b**2)
+        return mSide
+    elif c==True and b>a:
+        mSide=math.sqrt(b**2 - a**2)
         return mSide
     elif c==False:
         mSide=0
         mSide=math.sqrt(a**2 + b**2)
         return mSide
+print(hypotenuse(13,5,True))
