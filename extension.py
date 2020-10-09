@@ -34,6 +34,7 @@ If there are two solutions:
 output is: "The solutions are x=?? and x=??"
 """
 
+
 def numSolutions(a,b,c):
     # inputs:
     # float a
@@ -42,6 +43,14 @@ def numSolutions(a,b,c):
     # Description:
     #
     # return 0, 1 or 2
+    import math
+    if ((b**2)-(4*a*c))<0:
+        return 0
+    disc=((b**2)-(4*a*c))**0.5
+    if disc==0:
+        return 1
+    if disc>0:
+        return 2
 
 def solutions(a,b,c):
     #inputs:
@@ -51,16 +60,39 @@ def solutions(a,b,c):
     # Desription:
     #
     # return tuple of float solution1 and float solution2
+    coord=()
+    x = (-b + ((b**2 - 4 * a * c)**0.5)) / (2*a)
+    y=  (-b - ((b**2 - 4 * a * c)**0.5)) / (2*a)
+    sols=numSolutions(a,b,c)
+    if sols==0:
+        return 0
+    elif sols==1 or sols==2:
+        coord=(x,y)
+        return coord
+    
 
 def title():
     # inputs none
     # return str of All the title and instructions on one line
-
+    ti1="This is a function to find the solutions of a quadratic function. Input three numbers (a,b and c), to find the solutions of a function of the form ax^2+bx+c=0"
+    return ti1
 
 def main():
     # Display Title and Instructions
     print( title() )
     # Your code and function calls should go here
+    a=float(input("Enter the first number: "))
+    b=float(input("Enter the second number: "))
+    c=float(input("Enter the third number: "))
+    num1=numSolutions(a,b,c)
+    roots=solutions(a,b,c)
+
+    if num1==0:
+        print("There are no real solutions.")
+    elif num1==1:
+        print("There is one solution, x="+str(roots[0]))
+    elif num1==2:
+        print("There are two solutions, x="+str(roots[0])+" and x="+str(roots[1]) +".")
 
 
 
